@@ -10,12 +10,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+console.log(path.join(__dirname, '../../app-frontend/dist/app-frontend/browser'));
+ app.use(express.static(path.join(__dirname, '../../app-frontend/dist/app-frontend/browser')));
+
 app.use('/', authRoutes);
 
-app.use(express.static(path.join(__dirname, '../app-frontend/dist/browser')));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../app-frontend/dist/browser/index.csr.html'));
+console.log(path.join(__dirname, '../../app-frontend/dist/app-frontend/browser/index.csr.html'));
+app.get(/(.*)/, (req, res) => {
+  res.sendFile(path.join(__dirname, '../../app-frontend/dist/app-frontend/browser/index.csr.html'));
 });
 
 const PORT = process.env.PORT || 5000;
