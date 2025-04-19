@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SalesforceService } from '../../services/salesforce.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-dashboard',
@@ -76,7 +77,7 @@ export class DashboardComponent implements OnInit {
   connectToSalesforce() {
     const token = localStorage.getItem('token');
     if (token) {
-      window.location.href = `http://localhost:5000/oauth/login?token=${token}`;
+      window.location.href = `${environment.apiBaseUrl}/oauth/login?token=${token}`;
     } else {
       console.error('No token found');
     }

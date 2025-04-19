@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SalesforceService {
-  private apiUrl = 'http://localhost:5000/salesforce/accounts'; // Backend API endpoint
+  private apiUrl = `${environment.apiBaseUrl}/salesforce/accounts`; // Backend API endpoint
 
   constructor(private http: HttpClient) {
 
