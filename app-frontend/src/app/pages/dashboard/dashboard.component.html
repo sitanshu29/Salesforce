@@ -1,0 +1,57 @@
+<div class="dashboard-container">
+  <h1>Salesforce Accounts</h1>
+
+  <button (click)="connectToSalesforce()">Connect to Salesforce 🔗</button>
+
+
+  <div *ngIf="accounts.length === 0 && !errorMessage">
+    No Accounts Found 🫤
+  </div>
+  
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Loading Spinner -->
+  <div *ngIf="loading" class="spinner">
+    Loading accounts...
+  </div>
+
+  <!-- Accounts Table -->
+  <table *ngIf="!loading && accounts.length > 0" class="accounts-table">
+    <thead>
+      <tr>
+        <th>Account Name</th>
+        <th>Industry</th>
+        <th>Phone</th>
+        <th>Website</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let account of accounts">
+        <td>{{ account.Name }}</td>
+        <td>{{ account.Industry || 'N/A' }}</td>
+        <td>{{ account.Phone || 'N/A' }}</td>
+        <td>
+          <a *ngIf="account.Website" [href]="account.Website" target="_blank">{{ account.Website }}</a>
+          <span *ngIf="!account.Website">N/A</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div *ngIf="noMoreRecords" style="color: red; margin-top: 10px;">
+    ❗ No more records to show.
+  </div>
+
+  <div *ngIf="!loading" style="margin-top: 20px;">
+    <button (click)="prevPage()" [disabled]="page === 1">Previous</button>
+    <span style="margin: 0 10px;">Page {{ page }}</span>
+    <button (click)="nextPage()">Next</button>
+  </div>
+
+  <div *ngIf="!loading" class="header">
+    <button (click)="logout()" class="btn btn-danger">Logout</button>
+  </div>
+</div>
