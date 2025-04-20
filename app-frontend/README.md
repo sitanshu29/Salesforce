@@ -1,10 +1,55 @@
-# AppFrontend
+# App Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.8.
+This is the frontend application for the Salesforce-integrated project. It is built using Angular and supports server-side rendering (SSR) for improved performance and SEO.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- Built with Angular 19.
+- Server-side rendering (SSR) using Angular Universal.
+- Responsive design with Bootstrap 5.
+- Integration with the backend server for authentication and Salesforce data.
+- Environment-based configuration for development and production.
+
+## Hosted Application
+
+The frontend application is hosted at:
+
+[https://salesforce-frontend.onrender.com](https://salesforce-frontend.onrender.com)
+
+You can visit this link to access the live application.
+
+## Prerequisites
+
+Before running the application, ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v16 or higher recommended)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
+- [Angular CLI](https://angular.io/cli) (v15 or higher recommended)
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone <repository-url>
+   cd app-frontend
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Set up the environment files:
+
+   - Update the environment files in `src/environments/` for development and production configurations.
+
+## Running the Application
+
+### Development Server
+
+To start a local development server using `ng serve`:
 
 ```bash
 ng serve
@@ -12,48 +57,71 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+### Server-Side Rendering (SSR)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+To build and serve the application with SSR:
 
-```bash
-ng generate component component-name
-```
+1. Build the application:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+   ```bash
+   npm run build
+   ```
 
-```bash
-ng generate --help
-```
+2. Serve the SSR application:
 
-## Building
+   ```bash
+   npm run serve:ssr
+   ```
 
-To build the project run:
+The SSR server will run on `http://localhost:4000/` by default.
 
-```bash
-ng build
-```
+## Building the Application
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+To build the application for production:
 
 ```bash
-ng test
+npm run build
 ```
 
-## Running end-to-end tests
+The build artifacts will be stored in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-For end-to-end (e2e) testing, run:
+## Project Structure
 
-```bash
-ng e2e
+```
+app-frontend/
+├── .editorconfig         # Editor configuration
+├── .gitignore            # Git ignore rules
+├── angular.json          # Angular CLI configuration
+├── package.json          # Project metadata and dependencies
+├── tsconfig.json         # TypeScript configuration
+├── src/
+│   ├── index.html        # Main HTML file
+│   ├── main.ts           # Main entry point for the application
+│   ├── main.server.ts    # Entry point for server-side rendering
+│   ├── app/
+│   │   ├── app.component.ts  # Root component
+│   │   ├── app.config.ts     # Application configuration
+│   │   ├── app.routes.ts     # Application routes
+│   │   ├── services/         # Angular services
+│   │   └── pages/            # Application pages
+│   └── environments/         # Environment-specific configurations
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Dependencies
 
-## Additional Resources
+- **Angular**: Frontend framework.
+- **Bootstrap**: CSS framework for responsive design.
+- **Angular Universal**: Server-side rendering for Angular applications.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Development Notes
+
+- The frontend communicates with the backend server hosted at [https://salesforce-d00d.onrender.com](https://salesforce-d00d.onrender.com).
+- Ensure the backend server is running and accessible for full functionality.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
