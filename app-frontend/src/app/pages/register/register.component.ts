@@ -30,6 +30,6 @@ export class RegisterComponent {
   }
 
   onGoToLogin(): void {
-    this.router.navigate(['/login']); // Navigates to the Login page
+    this.router.navigate(['/login']); // Navigate to the Login page
   }
 }

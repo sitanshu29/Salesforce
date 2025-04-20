@@ -28,7 +28,7 @@ router.get('/salesforce/callback', async (req, res) => {
       const code = req.query.code as string;
       const state = req.query.state as string;
       await handleOAuthCallback(code, state);
-      const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:4200'; // Your frontend URL
+      const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:4200'; 
       res.redirect(`${frontendUrl}/dashboard`);
     } catch (error) {
       console.error('OAuth callback error:', error);
