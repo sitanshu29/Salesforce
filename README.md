@@ -2,6 +2,15 @@
 
 Welcome to the **Salesforce-Integrated Application**! This project consists of a **backend server** and a **frontend application** designed to work seamlessly together to provide a robust and scalable solution for Salesforce integration.
 
+---
+
+## 🌐 Live Application
+
+- 🌟 **Frontend**: [https://salesforce-frontend.onrender.com](https://salesforce-frontend.onrender.com)
+- 🌟 **Backend**: [https://salesforce-d00d.onrender.com](https://salesforce-d00d.onrender.com)
+
+---
+
 ## ✨ Features
 
 - 🔒 **Backend**: Built with Node.js, Express, and PostgreSQL, featuring user authentication, Salesforce API integration, and RESTful endpoints.
@@ -11,19 +20,37 @@ Welcome to the **Salesforce-Integrated Application**! This project consists of a
 
 ---
 
-## 🌐 Hosted Application
-
-- 🌟 **Frontend**: [https://salesforce-frontend.onrender.com](https://salesforce-frontend.onrender.com)
-- 🌟 **Backend**: [https://salesforce-d00d.onrender.com](https://salesforce-d00d.onrender.com)
-
----
-
 ## 🎥 Demo Video
 
 Check out the demo video to see the application in action:
 
 [![Watch the Demo](https://img.youtube.com/vi/<video-id>/0.jpg)](https://www.youtube.com/watch?v=<video-id>)
 
+---
+
+## 🏗️ Architecture and Approach
+
+### Architecture Overview
+
+1. **Frontend**:
+   - Built with Angular for a modular and scalable UI.
+   - Server-side rendering (SSR) using Angular Universal for better SEO and performance.
+   - Communicates with the backend via RESTful APIs.
+
+2. **Backend**:
+   - Built with Node.js and Express for a lightweight and efficient server.
+   - PostgreSQL database for secure and reliable data storage.
+   - Integrates with Salesforce APIs for OAuth authentication and data fetching.
+
+3. **Integration**:
+   - The frontend and backend are decoupled, allowing independent development and deployment.
+   - Environment-based configurations for seamless deployment in different environments.
+
+### Challenges Faced
+
+- **Salesforce OAuth Integration**: Handling the OAuth flow and token management required careful implementation to ensure security and reliability.
+- **Server-Side Rendering (SSR)**: Implementing SSR in Angular required additional configuration and debugging to ensure compatibility with the backend.
+- **Free Tier Hosting**: Hosting on free-tier services introduced latency due to server sleep modes, which required user-friendly messaging to handle delays.
 
 ---
 
@@ -94,24 +121,32 @@ Salesforce/
 
 ---
 
-## ⚙️ Quick Setup Instructions
+## ⚙️ Deployment Instructions
 
-1. **🔑 Environment Variables**:
-   - Configure the `.env` file in the `app-backend` folder with the required credentials (e.g., Salesforce credentials, database URL, etc.).
-   - Example `.env` file:
-     ```env
-     PORT=5000
-     DATABASE_URL=postgresql://<username>:<password>@<host>:<port>/<database>
-     JWT_SECRET=<your_jwt_secret>
-     SALESFORCE_CLIENT_ID=<your_salesforce_client_id>
-     SALESFORCE_CLIENT_SECRET=<your_salesforce_client_secret>
-     ```
+### Backend Deployment
 
-2. **🗄️ Database Setup**:
-   - Create a PostgreSQL database and run the necessary SQL scripts to set up the `users` table.
+1. Set up a PostgreSQL database and configure the `.env` file with the required credentials.
+2. Deploy the backend server to a hosting platform like Render, Heroku, or AWS.
+3. Ensure the backend server is accessible via a public URL.
 
-3. **▶️ Run the Application**:
-   - Start the backend and frontend servers as described in the **Quick Start** section.
+### Frontend Deployment
+
+1. Build the Angular application for production:
+   ```bash
+   npm run build
+   ```
+2. Deploy the build artifacts (in the `dist/` folder) to a hosting platform like Netlify, Vercel, or AWS S3.
+3. Ensure the frontend is configured to communicate with the backend server.
+
+---
+
+## 🌟 Future Features
+
+Here are some features that can be added in the future to enhance the application:
+
+- 📊 **Dashboard**: Add a user-friendly dashboard to display Salesforce data visually (e.g., charts, graphs).
+- 🔐 **Login Directly to Salesforce**: Directly login to Salesforce account as an when the user logs in.
+- 🔍 **Advanced Search**: Add advanced filtering and search capabilities for Salesforce data.
 
 ---
 
