@@ -24,7 +24,7 @@ Welcome to the **Salesforce-Integrated Application**! This project consists of a
 
 Check out the demo video to see the application in action:
 
-[![Watch the Demo](https://img.youtube.com/vi/<video-id>/0.jpg)](https://www.youtube.com/watch?v=<video-id>)
+[![Watch the Demo](https://youtu.be/NnUOdVBBLEM)
 
 ---
 
